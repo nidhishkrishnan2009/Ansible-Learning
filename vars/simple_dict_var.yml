@@ -1,0 +1,9 @@
+---
+foods:
+  fruits:
+    orange: 1
+    apple: 2
+
+  vegetables:
+    cabbage: 1
+    y: 1

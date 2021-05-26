@@ -1,0 +1,10 @@
+---
+- name: "Testing variables"
+  hosts: appserver
+  vars_files: 
+    - ~/Documents/Ansible/vars/name_vars.yml
+
+  tasks:
+    - name: Executing variable
+      ansible.builtin.debug:
+        msg: "{{var1}}"

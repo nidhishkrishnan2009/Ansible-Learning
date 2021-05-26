@@ -1,0 +1,13 @@
+---
+- name: Writing to multiple directories
+  hosts: appserver
+  tasks:
+  - name: Touching new files
+    ansible.builtin.file:
+      dest: "{{ item.path }}"
+      state: touch
+      mode: "{{ item.mode | default(omit) }}"
+    loop:
+      - path: ~/Documents/Ansible/test-output/test5
+      - path: ~/Documents/Ansible/test-output/test6
+        mode: "0444"

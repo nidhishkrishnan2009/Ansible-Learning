@@ -1,0 +1,33 @@
+---
+- name: Simple dictionary example
+  hosts: appserver
+  vars_files:
+    - ~/Documents/Ansible/vars/simple_dict_var.yml
+    - ~/Documents/Ansible/vars/name_vars.yml
+
+  vars:
+    users:
+      alice:
+        name: Alice Appleworth
+        telephone: 123-456-7890
+      bob:
+        name: Bob Bananarama
+        telephone: 987-654-3210
+  
+  tasks:
+    - name: Printing dictionary elements
+      ansible.builtin.debug:
+        msg: "{{foods}}"
+
+    - name: Looping item from dicionary
+      debug: 
+        msg: "{{item.key}} {{item.value}}"
+      loop: "{{lookup('dict',foods)}}"
+
+    - name: Accessing a particular item from dicionary
+      debug: 
+        msg: "{{foods.fruits.apple}}"
+
+    - name: Accessing second var file
+      debug: 
+        msg: "Hello {{var1}}"

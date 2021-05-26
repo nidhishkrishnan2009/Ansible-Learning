@@ -1,0 +1,7 @@
+all:
+  hosts:
+    wwww.google.com
+  children:
+    appserver:
+      hosts:
+        localhost
