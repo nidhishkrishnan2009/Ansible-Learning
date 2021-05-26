@@ -2,5 +2,3 @@ When using ssh connection plugin- use ssh-agent is highly recommended.
 
 playbook run command
 ansible-playbook -i /home/nidhishkrishnan/Documents/Ansible/inventory/inventory.yml write_to_multiple_directories.yml --connection=local
-
-Testing
